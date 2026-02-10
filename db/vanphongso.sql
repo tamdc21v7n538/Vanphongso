@@ -38,7 +38,7 @@ CREATE TABLE room_bookings (
 INSERT INTO users (username, full_name, role)
 VALUES
     ('Tam', 'Tran Huu Tam', 'USER'),
-    ('Nguyen Ngoc Truyen', 'Quan tri vien', 'ADMIN');
+    ('Truyen', 'Nguyen Ngoc Truyen', 'ADMIN');
 
 INSERT INTO rooms (name, capacity, location)
 VALUES
