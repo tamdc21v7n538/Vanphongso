@@ -5,6 +5,14 @@ COLLATE utf8mb4_unicode_ci;
 
 
 USE vanphongso;
+CREATE TABLE users (
+                       id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                       username VARCHAR(50) NOT NULL,
+                       full_name VARCHAR(100),
+                       role VARCHAR(30) NOT NULL
+);
+
+
 CREATE TABLE rooms (
                        id BIGINT AUTO_INCREMENT PRIMARY KEY,
                        name VARCHAR(100) NOT NULL,
@@ -27,6 +35,11 @@ CREATE TABLE room_bookings (
                                        ON DELETE CASCADE
 );
 
+INSERT INTO users (username, full_name, role)
+VALUES
+    ('Tam', 'Tran Huu Tam', 'USER'),
+    ('Nguyen Ngoc Truyen', 'Quan tri vien', 'ADMIN');
+
 INSERT INTO rooms (name, capacity, location)
 VALUES
     ('Phong hop 1', 30, 'Tang 1'),
@@ -35,3 +48,4 @@ VALUES
 INSERT INTO room_bookings (room_id, start_time, end_time, purpose)
 VALUES
     (1, '2026-02-10 06:00:00', '2026-02-10 8:00:00', 'Thuc tap nhom 1 lan 1');
+
