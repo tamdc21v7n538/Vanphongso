@@ -21,6 +21,13 @@ CREATE TABLE rooms (
                        status VARCHAR(30) DEFAULT 'AVAILABLE'
 );
 
+CREATE TABLE assets (
+                        id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                        name VARCHAR(100) NOT NULL,
+                        quantity INT NOT NULL,
+                        status VARCHAR(30) DEFAULT 'AVAILABLE'
+);
+
 CREATE TABLE room_bookings (
                                id BIGINT AUTO_INCREMENT PRIMARY KEY,
                                room_id BIGINT NOT NULL,
@@ -35,6 +42,7 @@ CREATE TABLE room_bookings (
                                        ON DELETE CASCADE
 );
 
+
 INSERT INTO users (username, full_name, role)
 VALUES
     ('Tam', 'Tran Huu Tam', 'USER'),
@@ -45,7 +53,13 @@ VALUES
     ('Phong hop 1', 30, 'Tang 1'),
     ('Phong hop 2', 40, 'Tang 2');
 
+INSERT INTO assets (name, quantity, status)
+VALUES
+    ('May chieu', 2, 'AVAILABLE'),
+    ('Tivi 65 inch', 1, 'AVAILABLE'),
+    ('Micro', 4, 'AVAILABLE');
+
 INSERT INTO room_bookings (room_id, start_time, end_time, purpose)
 VALUES
-    (1, '2026-02-10 06:00:00', '2026-02-10 8:00:00', 'Thuc tap nhom 1 lan 1');
+    (1, '2026-02-10 06:00:00', '2026-02-10 08:00:00', 'Thuc tap nhom 1 lan 1');
 
