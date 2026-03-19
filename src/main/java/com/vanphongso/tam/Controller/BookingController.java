@@ -29,4 +29,10 @@ public class BookingController {
         booking.setApproved(true);
         return bookingRepository.save(booking);
     }
+
+    // ✅ DELETE booking
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        bookingRepository.deleteById(id);
+    }
 }

@@ -1,4 +1,4 @@
-package com.vanphongso.tam.Controller;
+package com.vanphongso.tam.controller;
 
 import com.vanphongso.tam.entity.Room;
 import com.vanphongso.tam.Sevice.RoomService;
@@ -16,31 +16,31 @@ public class RoomController {
         this.roomService = roomService;
     }
 
-    // ✅ Lấy tất cả
+    // ✅ GET ALL
     @GetMapping
-    public List<Room> getAllRooms() {
+    public List<Room> getAll() {
         return roomService.getAllRooms();
     }
 
-    // ✅ Lấy theo ID
+    // ✅ GET BY ID
     @GetMapping("/{id}")
     public Room getById(@PathVariable Long id) {
         return roomService.getById(id);
     }
 
-    // ✅ Thêm phòng
+    // ✅ CREATE
     @PostMapping
     public Room create(@RequestBody Room room) {
         return roomService.create(room);
     }
 
-    // ✅ Cập nhật
+    // ✅ UPDATE
     @PutMapping("/{id}")
     public Room update(@PathVariable Long id, @RequestBody Room room) {
         return roomService.update(id, room);
     }
 
-    // ✅ Xoá
+    // ✅ DELETE
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         roomService.delete(id);
